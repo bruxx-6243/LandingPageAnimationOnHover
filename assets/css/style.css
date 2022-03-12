@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500&display=swap');
+
+:root{
+    --bg-color: linear-gradient(-24deg, #e9d6ffb0, #fff);
+    --dark-color: #0a0a0c;
+    --light-color: #fff;
+    --primary-color: rgb(183, 107, 255);
+}
+
+*, ::before, ::after{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    text-decoration: none;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    background : var(--bg-color);
+    color: var(--dark-color);
+    overflow: hidden;
+    font-family: 'Poppins', sans-serif;
+}
+
+a{
+    color: var(--dark-color);
+    font-size: .9rem;
+    transition: all .4s ease;
+}
+
+a:hover{
+    color: var(--primary-color);
+}
+
+.btn{
+    display: inline-block;
+    background: var(--primary-color);
+    padding: .5rem 2.4rem;
+    border-radius: 2rem;
+    color: var(--light-color);
+    border: 2px solid transparent;
+}
+
+.btn:hover{
+    color: var(--dark-color);
+    background: transparent;
+    border: 2px solid var(--primary-color);
+}
+
+.log-in{
+    display: inline-block;
+    background: transparent;
+    padding: .5rem 2.4rem;
+    border-radius: 2rem;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
+
+.log-in:hover{
+    color: var(--light-color);
+    background: var(--primary-color);
+}
+
+header{
+    width: 100%;
+    height: 100%;
+}
+
+.container{
+    width: 86%;
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+
+header .container nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: 1.2rem;
+    z-index: 10;
+}
+
+nav .logo a{
+    font-size: 2.4rem;
+}
+
+nav .menu__toggle {
+    display: none;
+    cursor: pointer;
+}
+nav .menu__toggle i{
+    font-size: 2rem;
+    color: var(--dark-color);
+}
+
+.container nav ul{
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.container nav ul li i{
+    font-size: 1.3rem;
+}
+
+/* ================== Main section ================= */
+
+header .container section{
+    display: grid;
+    grid-template-columns: 2fr 3fr;   
+    width: 100%;
+    height: 100%;
+}
+
+section .left{
+    margin-top: 3rem;
+}
+
+section .left h2{
+    font-size: 2rem;
+}
+
+section .left h1{
+    font-size: 5rem;
+    line-height: 1.1;
+    font-weight: 300;
+    color: var(--primary-color);
+    letter-spacing:-.4rem;
+}
+
+
+section .left p{
+    max-width: 30rem;
+    font-weight: 300;
+}
+
+section .left p.price{
+    font-weight: bold;
+    font-size: 1rem;
+    margin-top: 1rem;
+}
+
+section .left .btn{
+    margin-top: 2rem;
+    padding: 1.2rem 3rem;
+}
+
+section .right{
+    position: relative;
+    display: grid;
+    place-items: center;
+}
+
+section .right .background{
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    justify-self: start;
+    background: linear-gradient(-35deg, #3333, #fff);
+    animation: movieBall 2s linear infinite;
+}
+
+@keyframes movieBall{
+    0%{
+        transform: scale(.8);
+    }
+    50%{
+        transform: scale(1);
+    }
+    100%{
+        transform: scale(.8);
+    }
+}
+
+
+section .right .image{
+    position: absolute;
+    width: 28rem;
+    height: 28rem;
+    right: 5rem;
+    cursor: pointer;
+}
+
+section .right .image img{
+    width: 100%;
+    transform: rotate(20deg);
+    z-index: 0;
+    transition: transform 1s ease;
+}
+
+section .right .image img:hover{
+    transform: rotate(0deg) scale(1.189);
+}
